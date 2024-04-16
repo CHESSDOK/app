@@ -22,7 +22,7 @@
     if($rows==1){
     $_SESSION['username']= $username;
     $_SESSION['password']= $password;
-    header('Location:/page/home.html');
+    header('Location:../pages/home.html');
     }
 
     else {
