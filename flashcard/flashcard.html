@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Viewer</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="flashcard">
+            <div id="card-container">
+                <!-- Flashcard content will be dynamically inserted here -->
+            </div>
+            <div class="buttons-container">
+                <button id="prev-btn" class="prev-next-btn">Previous</button>
+                <button id="next-btn" class="prev-next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const cardContainer = document.getElementById("card-container");
+        const prevButton = document.getElementById("prev-btn");
+        const nextButton = document.getElementById("next-btn");
+        let currentCardIndex = 0;
+
+        // Function to display current flashcard
+        function displayCard(index) {
+            // Make AJAX call to fetch flashcards from server
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "get_flashcards.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const flashcards = JSON.parse(xhr.responseText);
+                    const currentCard = flashcards[index];
+                    cardContainer.innerHTML = `
+                        <div class="card">
+                            <p class="question-div">${currentCard.question}</p>
+                            <p class="answer-div hide">${currentCard.answer}</p>
+                            <a href="#" class="show-hide-btn">Show/Hide</a>
+                        </div>
+                    `;
+                }
+            };
+            xhr.send();
+        }
+
+        // Function to handle "Next" button click
+        nextButton.addEventListener("click", () => {
+            currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+            displayCard(currentCardIndex);
+        });
+
+        // Function to handle "Previous" button click
+        prevButton.addEventListener("click", () => {
+            currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+            displayCard(currentCardIndex);
+        });
+
+        // Display initial flashcard
+        displayCard(currentCardIndex);
+    </script>
+</body>
+</html>
