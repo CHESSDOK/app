@@ -1,0 +1,444 @@
+
+/* index.html */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+  }
+  
+  .flex-container > .header {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    color: #fefefe;
+    line-height: 25px;
+    font-size: 37px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .flex-container > .login {
+    width: 30%;
+    margin: 0px auto;
+    color: #fefefe;
+    line-height: 50px;
+    text-align: center;
+    font-size: 28px;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .flex-container > .login label[for=email],label[for=pass]{
+    color: #fefefe;
+    font-size: 18px;
+    font-size: 20px;
+    letter-spacing: 15px;
+  }
+  
+  .login input[type=password],input[type=email]{
+    width: 80%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #000;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adding box shadow */
+  }
+  
+  .login button{
+    width: 80%;
+    height: 50px;
+    margin-top: 80px;
+    border-radius: 12px;
+    background-color: #253A7D;
+    color: #fff;
+    border: none;
+    font-size: 25px;
+  }
+.flex-container-1 {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    gap: 100px;
+  }
+.flex-container-1 > div {
+    margin: 0 auto;
+    padding: 4px;
+    font-size: 18px;
+  }
+  .login label[for=reme]{
+    color: #fefefe;
+    font-size: 18px;
+  }
+  
+  .login input[type=checkbox]{
+    width: 20px;
+    height: auto;
+    margin: auto;
+  }
+  .login a{
+    font-size: 16px;
+    color: #030816;
+    text-decoration: none;
+  }
+  .login a:hover{
+    text-decoration: underline;
+  }
+  .header h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 28px;
+  }
+  /* home.html */
+
+  .header-DB {
+    background-size: cover;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    position: relative;
+}
+
+.header-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.header-text h1{
+    font-size: 28px;
+    font-family: "Roboto", sans-serif;
+    margin: 100px auto;
+    font-weight: bold;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px  1px 0 #000,
+        1px  1px 0 #000;
+}
+
+.overlay {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-container {
+    display: flex;
+    gap: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container button{
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    color: #5375E2;
+    font-family: "Helvetica", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 2px;
+}
+
+.button-container button:hover {
+    background-color: #2B3BB0;
+    cursor: pointer;
+    color: #fff
+}
+.button-container button.active {
+    background-color: #2B3BB0;
+    color: #fff;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+.content-container p{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    margin: 10px auto;
+}
+
+.content-container a{
+    text-decoration: none;
+}
+
+.content {
+    width: calc(100% - 20px);
+    margin: 60px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.col {
+    width: calc(20.33% - 100px);
+    padding: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    z-index: -1;
+}
+
+.image-container img {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+}
+/* upload.html */
+.categ{
+  margin: auto;
+  font-size: 30px;
+  border: solid 1px #000;
+  box-shadow: 1px 1px #000;
+  color: #5375E2;
+  width: fit-content;
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
+}
+.categ select{
+  width: 100%;
+  height: auto;
+  position: relative;
+  
+}
+input [type=file]{
+  width: 90% ; 
+  background-color: #5375E2;
+  height: 200px;
+  margin: auto;
+}
+/* media query */
+  @media only screen and (max-width: 600px) {
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      width: 100%;
+    }
+    
+    .flex-container > .header {
+      width: 100%;
+      margin: 10px auto;
+      font-size: 27px;
+    }
+    
+    .flex-container > .login {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* home.hmtl*/
+      .rowcp {
+        display: flex;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .col {
+        width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button-container {
+        display: flex;
+        gap: 30px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button-container button{
+        width: 160px;
+        height: 70px;
+        border-radius: 15px;
+        color: #5375E2;
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+        border: none;
+        letter-spacing: 2px;
+    }
+    .header-DB {
+        background-size: cover;
+        width: 100%;
+        height: 300px; /* Adjust height as needed */
+    }
+
+    .header-text{
+        margin: 4% auto;
+        text-align: center;
+    }
+    .header-text h1{
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        margin: 100px auto;
+        font-weight: bold;
+    }
+    img {
+    width: 80px;
+    height: 80px;
+  }
+
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      width: 100%;
+    }
+    
+    .flex-container > .header {
+      width: 100%;
+      margin: 10px auto;
+      text-align: center;
+    }
+    
+    .flex-container > .login {
+      width: 500px;
+      margin: 0px auto;
+    }
+
+    /* home.hmtl*/
+    .rowcp {
+      display: flex;
+  }
+  .row {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+  }
+  .col {
+      width: 100%;
+      padding: 10px;
+      margin: 10px auto;
+  }
+
+  .overlay {
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .button-container {
+      display: flex;
+      gap: 200px;
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  .button-container button{
+      width: 160px;
+      height: 70px;
+      border-radius: 15px;
+      color: #5375E2;
+      font-family: "Roboto", sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      border: none;
+      letter-spacing: 2px;
+  }
+  .header-DB {
+      background-size: cover;
+      width: 100%;
+      height: 300px; /* Adjust height as needed */
+  }
+
+  .header-text{
+      margin: 4% auto;
+      text-align: center;
+  }
+  .header-text h1{
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      margin: 100px auto;
+      font-weight: bold;
+  }
+  img {
+  width: 80px;
+  height: 80px;
+}
+  }
+
+  @media only screen and (min-width: 901px) {
+    .flex-container {
+      display: flex;
+      margin: 0 auto;
+      width: 70%;
+    }
+    
+    .flex-container > .header {
+      width: 100%;
+      margin: 10px auto;
+      line-height: 25px;
+    }
+    
+    .flex-container > .login {
+      width: 500px;
+      margin: 0px auto;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .flex-container {
+      display: flex;
+      margin: 0 auto;
+      flex-direction: column;
+      align-content: center;
+      width: 100%;
+      }
+      
+      .flex-container > .header {
+        width: 100%;
+        margin: 10px auto;
+      }
+      
+      .flex-container > .login {
+        width: 500px;
+        margin: 0px auto;
+      }
+  }
